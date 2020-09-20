@@ -39,12 +39,20 @@ class Api::ProductsController < ApplicationController
     @product = Product.new(
       name: params[:name],
       price: params[:price],
-      image_path: params[:image_path],
+      #image_path: params[:image_path],
       description: params[:description],
-      quantity: params[:quantity]
+      quantity: params[:quantity],
+      supplier_id: params[:supplier_id] 
     )
-    if @product.save
-      render "show.json.jb"
+    ##Adding image table create URL
+    @image = Image.new(
+      url: params[:url],
+      product_id: 10
+    )
+
+    if @product.save && @image.save
+        render "show.json.jb"
+      end
     else 
       render json: {message: @product.errors.full_messages}, status: 422
     end
@@ -52,17 +60,19 @@ class Api::ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
-
     ###Added Image table -create update
     @image = Image.find_by(product_id: params[:id])
     @product.name = params[:name] || @product.name
     @product.price = params[:price] || @product.price
-    
+
     #create url update - image table
     @image.url = params[:url] || @image.url
 
     @product.description = params[:description] || @product.description
     @product.quantity= params[:quantity] || @product.quantity
+    #add supplier_id
+    @product.supplier_id= params[:supplier_id] || @product.supplier_id
+
     if @product.save && @image.save
       render "show.json.jb"
     else
