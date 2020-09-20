@@ -1,0 +1,18 @@
+{
+  id: product.id,
+  name: product.name,
+  price: product.price,
+  # image_path: product.image_path, 
+  description: product.description,
+  quantity: product.quantity,
+  supplier_name: product.supplier.name,
+  image: image.url,
+  formatted_data:{
+    is_discounted?: product.is_discounted?,
+    tax: product.tax,
+    total: product.total
+  }
+}
+
+#_partial_product.json.jb example
+# supplier_name: products.supplier.name
