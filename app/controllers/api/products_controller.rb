@@ -52,13 +52,18 @@ class Api::ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
-   
+
+    ###Added Image table -create update
+    @image = Image.find_by(product_id: params[:id])
     @product.name = params[:name] || @product.name
     @product.price = params[:price] || @product.price
-    @product.image_path = params[:image_path] || @product.image_path
+    
+    #create url update - image table
+    @image.url = params[:url] || @image.url
+
     @product.description = params[:description] || @product.description
     @product.quantity= params[:quantity] || @product.quantity
-    if @product.save
+    if @product.save && @image.save
       render "show.json.jb"
     else
       render json: {message: @product.errors.full_messages}, status: 422
