@@ -3,7 +3,6 @@ class Product < ApplicationRecord
  
   # validates :name, uniqueness: true, presence: true
   # validates :description, length: {in: 10..500}
-  # validates :image_path, presence: true
   # validates :price, numericality: {greater_than: 0}
   # validates :quantity, numericality: {greater_than: 0}
 
@@ -13,6 +12,7 @@ class Product < ApplicationRecord
     #   Supplier.find_by(id: supplier_id)
     # end
   has_many :images
+  has_many :orders
 
 
 

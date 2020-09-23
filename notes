@@ -1,0 +1,8 @@
+#1. verify the associations are working in rails console
+#1a.create an api/order controller
+#2. Create an new order are route
+#3. build a "create' method in the order controller
+#  --Add the parameters to pass form the create route (ie product name, qty, price, subtotal, etc)
+#  --- Can also fill the user id attribute from user id.
+#5. Create & save the order
+#6.  Create an 'order' show route

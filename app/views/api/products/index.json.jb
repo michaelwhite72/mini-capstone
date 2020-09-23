@@ -1,9 +1,9 @@
 
 @products.map do |product|
-  image = Image.find_by(product_id: product.id)
+  # image = Image.find_by(product_id: product.id)
   # image = Image.where("product_id Like ?", "#{product.id}")
 
-  render partial: "product.json.jb", locals: {product: product, image: image}
+  render partial: "product.json.jb", locals: {product: product}
 # {
 #   id: product.id,
 #   name: product.name,

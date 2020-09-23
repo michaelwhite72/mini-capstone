@@ -1,5 +1,5 @@
 #image = Image.find_by(product_id: @product.id)
-render partial: "product.json.jb", locals: {product: @product, image: @image}
+render partial: "product.json.jb", locals: {product: @product}
 
   # {
   #   id: @product.id,
