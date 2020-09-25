@@ -5,6 +5,7 @@
     price: product.price,
     description: product.description,
     supplier_name: product.supplier.name,
+    # categories: product.categories,
     images: product.images,
     formatted: {
       is_discounted: product.is_discounted?,

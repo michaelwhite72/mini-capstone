@@ -39,4 +39,26 @@
 # my_image = Image.new({url: "https://images-na.ssl-images-amazon.com/images/I/61J6MK1LzfL._AC_SL1500_.jpg", product_id: 5})
 # my_image.save
 
-camera = Image.new({url: "https://i5.walmartimages.com/asr/9938be41-a012-49a5-8d03-c52e174cd847_1.013b0f1bac4b9873b0a8290b79cace74.jpeg", product_id: 5})
+# camera = Image.new({url: "https://i5.walmartimages.com/asr/9938be41-a012-49a5-8d03-c52e174cd847_1.013b0f1bac4b9873b0a8290b79cace74.jpeg", product_id: 5})
+
+
+Category.create!([
+  {name: "Cheap"},
+  {name: "Wearable"},
+  {name: "Damage"},
+  {name: "Home Good"}
+])
+
+CategoryProduct.create!([
+  {category_id: 1, product_id: 1},
+  {category_id: 1, product_id: 6},
+  {category_id: 2, product_id: 3},
+  {category_id: 2, product_id: 15},
+  {category_id: 2, product_id: 7},
+  {category_id: 3, product_id: 3},
+  {category_id: 3, product_id: 15},
+  {category_id: 3, product_id: 5},
+  {category_id: 4, product_id: 1},
+  {category_id: 4, product_id: 2},
+  {category_id: 4, product_id: 7}
+])
