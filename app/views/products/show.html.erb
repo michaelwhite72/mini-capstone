@@ -1,0 +1,8 @@
+<h1>This is a Test1</h1>
+<h2>Product Id: <%= @product.id%></h2>
+  <h4>Name: <%= @product.name%></h4>
+  <h4>Price: <%= @product.price%></h4>
+  <h4>Description: <%= @product.description%></h4>
+  <h4>Supplier: <%= @product.supplier.name%></h4>
+
+<a href="/products/<% @product.id %>/edit">Edit</a>

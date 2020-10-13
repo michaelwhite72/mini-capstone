@@ -1,0 +1,28 @@
+<% @products.each do |product| %>
+  <h2>Product Id: <%= product.id%></h2>
+  <h4>Name: <%= product.name%></h4>
+  <h4>Price: <%= product.price%></h4>
+  <h4>Description: <%= product.description%></h4>
+  <h4>Supplier: <%= product.supplier.name%></h4>
+  <img src="<%= product.images %>%" alt="<%=product.name %>">
+
+
+<% end %>
+
+
+<%# {
+    id: product.id,
+    name: product.name,
+    price: product.price,
+    description: product.description,
+    supplier_name: product.supplier.name,
+    # categories: product.categories,
+    images: product.images,
+    formatted: {
+      is_discounted: product.is_discounted?,
+      price: number_to_currency(product.price),
+      tax: number_to_currency(product.tax),
+      total: number_to_currency(product.total)
+    }
+  }
+   %>
